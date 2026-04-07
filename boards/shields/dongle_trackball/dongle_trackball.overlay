@@ -2,8 +2,9 @@
     chosen {
         zmk,ble-central = &central;
     };
-};
 
-&central {
-    status = "okay";
+    central: central {
+        compatible = "zmk,ble-split-central";
+        status = "okay";
+    };
 };
