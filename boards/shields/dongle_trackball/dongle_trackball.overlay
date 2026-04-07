@@ -1,10 +1,25 @@
 / {
     chosen {
         zmk,ble-central = &central;
+        zmk,kscan = &fake_kscan;
+        zmk,matrix-transform = &default_transform;
     };
 
     central: central {
         compatible = "zmk,ble-split-central";
         status = "okay";
+    };
+
+    fake_kscan: fake_kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "FAKE_KSCAN";
+        input-gpios = <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // несуществующий пин
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <1>;
+        rows = <1>;
+        map = < RC(0,0) >;
     };
 };
