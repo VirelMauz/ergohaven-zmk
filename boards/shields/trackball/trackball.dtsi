@@ -13,9 +13,7 @@
         compatible = "zmk,matrix-transform";
         columns = <2>;
         rows = <1>;
-        map = <
-        RC(0,3) RC(0,2)
-        >;
+        map = < RC(0,3) RC(0,2) >;
     };
 
     kscan0: kscan {
@@ -41,18 +39,19 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&trackball>;
-    };
-
         trackball_split: trackball_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
             status = "okay";
-            input = <&trackball>;   // направляем сенсор в split-канал
+            // НЕТ свойства input!
         };
+    };
+
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball>;
+        output = <&trackball_split>;
     };
 };
 
