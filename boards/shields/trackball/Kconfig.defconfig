@@ -4,9 +4,9 @@ config ZMK_KEYBOARD_NAME
     default "EH TB Mini v3"
 
 config ZMK_SPLIT
-    default n
+    default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
+config ZMK_SPLIT_ROLE_PERIPHERAL
     default y
 
 config ZMK_POINTING
