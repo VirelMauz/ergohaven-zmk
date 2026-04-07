@@ -43,7 +43,6 @@
             compatible = "zmk,input-split";
             reg = <0>;
             status = "okay";
-            // НЕТ свойства input!
         };
     };
 
