@@ -41,6 +41,12 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball>;
+    };
+
         trackball_split: trackball_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
