@@ -1,21 +1,9 @@
 / {
     chosen {
         zmk,ble-central = &central;
-        zmk,usb-pointing = &usb_pointing;
-    };
-
-    central: &central {
-        status = "okay";
-        // Можно задать имя устройства, к которому подключаться (опционально)
-        // central-name = "EH TB Mini v3";
-    };
-
-    usb_pointing: &usb_pointing {
-        status = "okay";
     };
 };
 
-// Подключаем виртуальный сенсор, который будет принимать данные из split
-&pinctrl {
-    // Не нужно, если нет физических пинов
+&central {
+    status = "okay";
 };
